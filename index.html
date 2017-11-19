@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Aione Framework</title>
+	<!-- Global stylesheets -->
+	<link rel="stylesheet" type="text/css" href="http://aioneframework.com/aioneframework/assets/css/aione.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,800,900">
+	<script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/vendor.js"></script>
+	<script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/aione.js"></script>
+	
+	<style type="text/css">
+		.aione-builder.editable {
+			padding: 15px;
+		}
+		.aione-builder.editable section {
+			border:1px dotted #e8e8e8;
+			margin-bottom: 15px;
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div class="aione-wrapper">
+		<div class="aione-header bg-white aione-border-bottom">
+			<div class="ar">
+				<div class="ac s80 m80 l80 p-5">
+					<img src="http://aioneframework.com/assets/images/aione-framework-logo-small.png" height="30">
+				</div>
+				<div class="ac s20 m20 l20 aione-align-right p-5">
+					<button id="builder_switch" class="ph-20 pv-3">Edit</button>
+				</div>
+			</div>
+		</div>
+		<div class="aione-main">
+			<div class="ar">
+				<div class="ac s100 m100 l100 pv-30 ph-40">
+					<div class="aione-builder preview aione-border">
+						<section class="p-50">
+							1
+						</section>
+						<section class="p-50">
+							2
+						</section>
+						<section class="p-50">
+							3
+						</section>
+						<section class="p-50">
+							4
+						</section>
+						<section class="p-50">
+							5
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bg-blue-grey bg-darken-4 p-50">
+			<div class="aione-align-center">
+				&copy;2017 OXO Solutions. All rights reserved.
+			</div>
+		</div>
+	</div>	
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#builder_switch').click(function(e){
+				e.preventDefault();
+				var switch_html = $(this).text();
+				if (switch_html == 'Edit') {
+					$(this).text('Preview');
+				} else {
+					$(this).text('Edit');
+				}
+		    	$(".aione-builder").toggleClass("preview");
+		    	$(".aione-builder").toggleClass("editable");
+			})
+
+		});
+	</script>>
+</body>
+</html>
