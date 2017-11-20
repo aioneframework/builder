@@ -350,6 +350,12 @@
 	</div>	
 
 	<script type="text/javascript">
+		function make_ediable(){
+
+		}
+		function make_preview(){
+
+		}
 		$(document).ready(function() {
 			$('#builder_switch').click(function(e){
 				e.preventDefault();
@@ -396,6 +402,7 @@
 				disabled: false, // Disables the sortable if set to true.
 				store: null,  // @see Store
 				animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+				draggable: "section",
 				handle: ".aione-section-handle",
 				ghostClass: "ghost-section", 
 				chosenClass: "chosen-section",
