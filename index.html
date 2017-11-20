@@ -7,7 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,800,900">
 	<script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/vendor.js"></script>
 	<script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/aione.js"></script>
-	
 	<style type="text/css">
 		.aione-builder.editable {
 			padding: 15px;
@@ -16,7 +15,42 @@
 			border:1px dotted #e8e8e8;
 			margin-bottom: 15px;
 		}
-		
+
+		.aione-builder.editable .ar {
+			border:1px dotted #00ff00;
+			margin: 15px;
+		}
+
+		.aione-builder.editable .ac {
+			border:1px dotted #cc0000;
+			margin: 15px;
+		}
+
+
+		.aione-section-handle{
+			width: 50px;
+			height: 20px;
+			background-color: #cc0000;
+		}
+		.aione-col-handle{
+			width: 50px;
+			height: 20px;
+			background-color: #ededed;
+		}
+		.ghost-section{
+			background-color: #e8e8e8;
+			border : 1px solid red;
+		}
+		.chosen-section{
+			background-color: blue;
+		}
+		.drag-section{
+			background-color:  green;
+		}
+		#appended-row{
+			border: 4px dashed #ededed;
+			padding: 20px;
+		}
 	</style>
 </head>
 
@@ -35,24 +69,253 @@
 		<div class="aione-main">
 			<div class="ar">
 				<div class="ac s100 m100 l100 pv-30 ph-40">
-					<div class="aione-builder preview aione-border">
+					<div id="aione_builder" class="aione-builder preview aione-border">
 						<section class="p-50">
-							1
-						</section>
-						<section class="p-50">
-							2
-						</section>
-						<section class="p-50">
-							3
-						</section>
-						<section class="p-50">
-							4
-						</section>
-						<section class="p-50">
-							5
-						</section>
+							<div class="aione-section-handle"></div>
 
+							<div class="ar bg-red bg-lighten-4">
+								<div class="ac s100 m75 l75">
+									<div class="aione-col-handle"></div>
+
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Web Design</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+									<div class="ar aione-border m-10 p-5">
+
+										<div class="ac s100 m50 l25 p-10 bg-red">123</div>
+										<div class="ac s100 m50 l25 p-10 bg-green">234</div>
+										<div class="ac s100 m50 l25 p-10 bg-blue">345</div>
+									</div>
+
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Logo Design</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Android Application</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Web Application</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="ar bg-blue-grey bg-lighten-4">
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Domain Name</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Web Hosting</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">ERP Solutions</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">ANALYSIS</h4> 
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="p-50">
+							<div class="aione-section-handle"></div>
+							<div class="ar bg-red bg-lighten-4">
+								<div class="ac s100 m50 l25">
+									<div class="aione-col-handle"></div>
+
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Web Design</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Logo Design</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Android Application</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Web Application</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="ar bg-blue-grey bg-lighten-4" id="aione_columns2">
+								<div class="ac s100 m50 l25">
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Domain Name</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">Web Hosting</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">ERP Solutions</h4>
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+
+								<div class="ac s100 m50 l25">
+									<div class="aione-wrapper aione-border mb-20">
+										<div class="aione-title aione-align-center aione-border-bottom">
+											<h4 class="">ANALYSIS</h4> 
+										</div>
+										<div class="description p-10">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, vero? <br><br>Officiis ratione, nesciunt vel corrupti adipisci. Voluptates expedita sequi dolores.
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<section class="p-50">
+							<div class="aione-section-handle"></div>
+							<div class="appended-row">
+								<a href="#" class="aione-add-row-button">AddRow</a>
+								<div id="section-row">
+									<div class="ac s100 m100 l100 " id="appended-row">
+										<a href="#" class="aione-add-row-button">Add Column</a>			
+									</div>
+								</div>
+							</div>
+
+							<a href="#" class="aione-add-row-button">Add Row</a>
+
+						</section>
+						<section class="p-50">
+							<div class="aione-section-handle"></div>
+							<div class="ar">
+								<a href="#" class="aione-add-row-button">Add Column</a>
+							</div>
+							<a href="#" class="aione-add-row-button">Add Row</a>
+						</section>
+						<section class="p-50">
+							<div class="aione-section-handle"></div>
+
+							<div class="ar">
+								<div class="ac s100 m50 l25"> ghjghgjhg </div>
+								<a href="#" class="aione-add-row-button">Add Column</a>
+							</div>
+							<a href="#" class="aione-add-row-button">Add Row</a>
+						</section>
+						
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -63,7 +326,7 @@
 			</div>
 		</div>
 	</div>	
-	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#builder_switch').click(function(e){
@@ -76,7 +339,124 @@
 				}
 		    	$(".aione-builder").toggleClass("preview");
 		    	$(".aione-builder").toggleClass("editable");
-			})
+			});
+				//$('.aione-title').append('<div><ul ><li><i class="fa fa-trash"></i></li><li><i class="fa fa-pencil"></i></li></ul></div>');
+
+				//append row inside section
+				$(document).on('click','.aione-add-row-button',function(e){
+					e.preventDefault();
+					var empty_row = '<div class="ar"><div class="ac s100 m100 l100"> <a href="#" class="aione-add-column-button">Add Column</a> </div></div>';
+					$(this).parent().append(empty_row);
+				});
+
+			//editable
+				// function editable(){
+
+				// }
+
+
+			/*****************************************************
+			/*  SECTIONS
+			/*****************************************************/
+			/*
+			var sections = new Array();
+			$(".aione-builder section").each(function() {
+				var section_id = $(this).attr("id");
+				if(section_id != undefined){
+					sections.push(section_id);
+				} else {
+					var section_id = 'section_id_'+Math.floor(Math.random()*100000000);
+					$(this).attr("id", section_id);
+					sections.push(section_id);
+				}
+		    });
+		    console.log(sections);
+		    $.each(sections, function( index, section ) {
+		    	var section_id = document.getElementById(section);
+		    	Sortable.create(section_id,{
+					//group: "name_"+(index+1),  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
+					group: { name: "sorting", pull: false, put: false },
+					sort: true,  // sorting inside list
+					delay: 0, // time in milliseconds to define when the sorting should start
+					disabled: false, // Disables the sortable if set to true.
+					store: null,  // @see Store
+					animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+					handle: ".aione-section-handle",
+				});
+		    });
+		    */
+		   var aione_builder = document.getElementById('aione_builder');
+	    	Sortable.create(aione_builder,{
+				//group: "name_"+(index+1),  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
+				group: { name: "aione_builder_sections", pull: false, put: false },
+				sort: true,  // sorting inside list
+				delay: 0, // time in milliseconds to define when the sorting should start
+				disabled: false, // Disables the sortable if set to true.
+				store: null,  // @see Store
+				animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+				handle: ".aione-section-handle",
+				ghostClass: "ghost-section", 
+				chosenClass: "chosen-section",
+				dragClass:"drag-section",
+				//filter: '.ar , .ac'
+			});
+		  
+
+		    /*****************************************************
+			/*  ROWS
+			/*****************************************************/
+			var aione_rows = new Array();
+			$(".aione-builder .ar").each(function() {
+				var aione_row_id = $(this).attr("id");
+				if(aione_row_id != undefined){
+					aione_rows.push(aione_row_id);
+				} else {
+					var aione_row_id = 'el_id_'+Math.floor(Math.random()*100000000);
+					$(this).attr("id", aione_row_id);
+					aione_rows.push(aione_row_id);
+				}
+		        
+		    });
+		    $.each(aione_rows, function( index, aione_row ) {
+		    	var aione_row_id = document.getElementById(aione_row);
+		    	
+		    	Sortable.create(aione_row_id,{
+					//group: "name_"+(index+1),  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
+					group: { name: "columns", pull: true, put: ['columns'] },
+					
+					sort: true,  // sorting inside list
+					delay: 0, // time in milliseconds to define when the sorting should start
+					disabled: false, // Disables the sortable if set to true.
+					store: null,  // @see Store
+					handle: '.aione-col-handle',
+					animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+				});
+		    });
+
+		    /*
+
+
+			var el = document.getElementById('aione_columns');
+			console.log("===el");
+			console.log(el);
+			var ele = $(".ar");
+			console.log("===ele");
+			console.log(ele);
+
+			var sortable = Sortable.create(el,{
+				group: "name",  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
+				sort: true,  // sorting inside list
+				delay: 0, // time in milliseconds to define when the sorting should start
+				disabled: false, // Disables the sortable if set to true.
+				store: null,  // @see Store
+				animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+			});
+
+			*/
+
+			
+			
+
 
 		});
 	</script>>
