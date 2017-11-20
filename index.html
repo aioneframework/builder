@@ -11,19 +11,20 @@
 		.aione-builder.editable {
 			padding: 15px;
 		}
-		.aione-builder.editable section {
+		.aione-builder section {
 			border:1px dotted #e8e8e8;
 			margin-bottom: 15px;
 		}
 
-		.aione-builder.editable .ar {
+		.aione-builder .ar {
 			border:1px dotted #00ff00;
-			margin: 15px;
+			margin-bottom: 15px;
 		}
 
-		.aione-builder.editable .ac {
+		.aione-builder .ac {
 			border:1px dotted #cc0000;
-			margin: 15px;
+			margin-bottom: 15px;
+			padding: 10px;
 		}
 
 
@@ -50,6 +51,18 @@
 		#appended-row{
 			border: 4px dashed #ededed;
 			padding: 20px;
+		}
+
+
+		/*sandeep*/
+		.aione-option-bar{
+			width: 100%;
+		}
+		.aione-option-bar .aione-option-left-bar{
+			float: left;
+		}
+		.aione-option-bar .aione-option-right-bar{
+			float: right;
 		}
 	</style>
 </head>
@@ -285,31 +298,40 @@
 						</section>
 						<section class="p-50">
 							<div class="aione-section-handle"></div>
-							<div class="appended-row">
-								<a href="#" class="aione-add-row-button">AddRow</a>
-								<div id="section-row">
-									<div class="ac s100 m100 l100 " id="appended-row">
-										<a href="#" class="aione-add-row-button">Add Column</a>			
-									</div>
-								</div>
-							</div>
-
 							<a href="#" class="aione-add-row-button">Add Row</a>
 
 						</section>
 						<section class="p-50">
 							<div class="aione-section-handle"></div>
 							<div class="ar">
-								<a href="#" class="aione-add-row-button">Add Column</a>
+								<a href="#" class="aione-add-column-button">Add Column</a>
+								
 							</div>
 							<a href="#" class="aione-add-row-button">Add Row</a>
 						</section>
+								
+								<div class="aione-option-bar">
+									<div class="aione-option-left-bar">
+										<span>
+											<a href="">
+												<i class="fa fa-bars"></i>
+											</a>
+										</span>
+									</div>
+									<div class="aione-option-right-bar">
+										<span><a href=""><i class="fa fa-plus"></i></a></span>
+										<span><a href=""><i class="fa fa-minus"></i></a></span>
+										<span><a href=""><i class="fa fa-clone"></i></a></span>
+										<span><a href=""><i class="fa fa-cogs"></i></a></span>
+									</div>
+								</div>
+
 						<section class="p-50">
 							<div class="aione-section-handle"></div>
 
 							<div class="ar">
 								<div class="ac s100 m50 l25"> ghjghgjhg </div>
-								<a href="#" class="aione-add-row-button">Add Column</a>
+								<a href="#" class="aione-add-column-button">Add Column</a>
 							</div>
 							<a href="#" class="aione-add-row-button">Add Row</a>
 						</section>
@@ -345,8 +367,14 @@
 				//append row inside section
 				$(document).on('click','.aione-add-row-button',function(e){
 					e.preventDefault();
-					var empty_row = '<div class="ar"><div class="ac s100 m100 l100"> <a href="#" class="aione-add-column-button">Add Column</a> </div></div>';
+					var empty_row = '<div class="ar"><a href="#" class="aione-add-column-button">Add Column</a><div class="ac s100 m50 l100"></div></div>';
 					$(this).parent().append(empty_row);
+				});
+				//append row inside section
+				$(document).on('click','.aione-add-column-button',function(e){
+					e.preventDefault();
+					var empty_column = '<div class="ac s100 m50 l100"></div>';
+					$(this).parent().append(empty_column);
 				});
 
 			//editable
@@ -358,33 +386,7 @@
 			/*****************************************************
 			/*  SECTIONS
 			/*****************************************************/
-			/*
-			var sections = new Array();
-			$(".aione-builder section").each(function() {
-				var section_id = $(this).attr("id");
-				if(section_id != undefined){
-					sections.push(section_id);
-				} else {
-					var section_id = 'section_id_'+Math.floor(Math.random()*100000000);
-					$(this).attr("id", section_id);
-					sections.push(section_id);
-				}
-		    });
-		    console.log(sections);
-		    $.each(sections, function( index, section ) {
-		    	var section_id = document.getElementById(section);
-		    	Sortable.create(section_id,{
-					//group: "name_"+(index+1),  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
-					group: { name: "sorting", pull: false, put: false },
-					sort: true,  // sorting inside list
-					delay: 0, // time in milliseconds to define when the sorting should start
-					disabled: false, // Disables the sortable if set to true.
-					store: null,  // @see Store
-					animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
-					handle: ".aione-section-handle",
-				});
-		    });
-		    */
+			
 		   var aione_builder = document.getElementById('aione_builder');
 	    	Sortable.create(aione_builder,{
 				//group: "name_"+(index+1),  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
@@ -432,32 +434,6 @@
 					animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
 				});
 		    });
-
-		    /*
-
-
-			var el = document.getElementById('aione_columns');
-			console.log("===el");
-			console.log(el);
-			var ele = $(".ar");
-			console.log("===ele");
-			console.log(ele);
-
-			var sortable = Sortable.create(el,{
-				group: "name",  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
-				sort: true,  // sorting inside list
-				delay: 0, // time in milliseconds to define when the sorting should start
-				disabled: false, // Disables the sortable if set to true.
-				store: null,  // @see Store
-				animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
-			});
-
-			*/
-
-			
-			
-
-
 		});
 	</script>>
 </body>
