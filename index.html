@@ -14,7 +14,7 @@
 		.aione-builder section {
 			border:1px dotted #e8e8e8;
 			padding: 10px;
-			margin-bottom: 15px;
+			margin: 10px;
 		}
 
 		.aione-builder .ar {
@@ -105,7 +105,20 @@
 				<div class="ac s100 m100 l100 pv-30 ph-40 ">
 					<div id="aione_builder" class="aione-builder preview aione-border w-80">
 						<section class="p-50">					
+						</section>
+						<section class="p-50">					
 							<div class="ar">
+							</div>
+						</section>
+						<section class="p-50">					
+							<div class="ar">
+								<div class="ac s100 m50 l50"> </div>
+							</div>
+						</section>
+						<section class="p-50">					
+							<div class="ar">
+								<div class="ac s100 m50 l50"> </div>
+								<div class="ac s100 m50 l50"> </div>
 							</div>
 						</section>
 						<section class="p-50">
@@ -381,6 +394,7 @@
 					<div class="aione-builder-elements aione-border w-20" id="aione-builder-elements">
 						<h3>Elements</h3>
 						
+						
 						<div id="aione_elements_row">
 							<div class="ar">ROW 1</div>
 							<div class="ar">ROW 2</div>
@@ -392,14 +406,14 @@
 							<div class="ac s100 m33 l33"> Column One Third</div>
 							<div class="ac s100 m25 l25"> Column One Fourth</div>
 						</div>
-
-						<div class="aione-title" id="aione-h1"><h1>Heading 1 </h1></div>
-						<div class="aione-title" id="aione-h2"><h2>Heading 2 </h2></div>
-						<div class="aione-title" id="aione-h3"><h3>Heading 3 </h3></div>
-						<div class="aione-title" id="aione-h4"><h4>Heading 4 </h4></div>
-						<div class="aione-title" id="aione-h5"><h5>Heading 5 </h5></div>
-						<div class="aione-title" id="aione-h6"><h6>Heading 6 </h6></div>
-
+						<div id="aione_elements">
+							<div class="aione-title" id="aione_element"><h1> Heading 1 </h1></div>
+							<div class="aione-title" id="aione_h2"><h2> Heading 2 </h2></div>
+							<div class="aione-title" id="aione_h3"><h3> Heading 3 </h3></div>
+							<div class="aione-title" id="aione_h4"><h4> Heading 4 </h4></div>
+							<div class="aione-title" id="aione_h5"><h5> Heading 5 </h5></div>
+							<div class="aione-title" id="aione_h6"><h6> Heading 6 </h6></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -452,7 +466,7 @@
 		   var aione_builder = document.getElementById('aione_builder');
 	    	Sortable.create(aione_builder,{
 				//group: "name_"+(index+1),  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
-				group: { name: "aione_builder_sections", pull: false, put: ['aione_elements_row'] },
+				group: { name: "aione_builder_sections", pull: false, put: ['aione_elements_row','aione_elements'] },
 				sort: true,  // sorting inside list
 				delay: 0, // time in milliseconds to define when the sorting should start
 				disabled: false, // Disables the sortable if set to true.
@@ -497,17 +511,25 @@
 		    });
 
 
-		    var aione_elements_row =	document.getElementById('aione_elements_row');
+		    var aione_elements_row = document.getElementById('aione_elements_row');
 		    Sortable.create(aione_elements_row,{
-				group: { name: "aione_elements_row", pull: 'clone', put: ['aione_elements_columns'] },
-				sort: true,
-		    });
-		    var aione_elements_columns =	document.getElementById('aione_elements_columns');
-		    Sortable.create(aione_elements_columns,{
-				group: { name: "aione_elements_columns", pull: 'clone', put: true },
+				group: { name: "aione_elements_row", pull: 'clone', put: ['aione_elements','aione_elements_columns'] },
 				sort: false,
 		    });
-																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				
+		    var aione_elements_columns = document.getElementById('aione_elements_columns');
+		    Sortable.create(aione_elements_columns,{
+				group: { name: "aione_elements_columns", pull: 'clone', put: ['aione_elements'] },
+				sort: false,
+		    });
+		    
+
+	    	var aione_elements = document.getElementById('aione_elements');
+	    	Sortable.create(aione_elements,{
+				group: { name: "aione_elements", pull: 'clone', put: true },
+				sort: false,
+			});
+
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																									
 		});
 
 	</script>>
