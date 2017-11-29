@@ -257,7 +257,7 @@
 									</div>
 								</div>
 							</section>
-							<section class="p-50">
+							<!-- <section class="p-50">
 								<div class="aione-section-handle"></div>
 								<a href="#" class="aione-add-row-button">Add Row</a>
 
@@ -269,7 +269,7 @@
 									
 								</div>
 								<a href="#" class="aione-add-row-button">Add Row</a>
-							</section>
+							</section> -->
 								
 							<section class="p-50">
 
@@ -365,6 +365,8 @@
 <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
 <script type="text/javascript">
 	$(document).ready(function() {
+					//local storage
+
 		$('#builder_switch').click();
 		function initialAioneBuilder(){
 				var aione_section = new Array();
@@ -405,9 +407,6 @@
 						setTimeout(function(){
 							initializaSection();
 						},200);
-						var data = $('.aione-builder-wrapper').html();
-						localStorage.setItem('aione-builder', data);
-						storage();
 					}
 			});
 			//initialize aione builder
@@ -443,28 +442,6 @@
 			initializaSection();
 			
 
-		//*****************************************************************
-
-
-
-
-		 
-
-			//append row inside section
-			// $(document).on('click','.aione-add-row-button',function(e){
-			// 	e.preventDefault();
-			// 	var empty_row = '<div class="ar"><a href="#" class="aione-add-column-button">Add Column</a><div class="ac s100 m50 l100"></div></div>';
-			// 	$(this).parent().append(empty_row);
-			// });
-
-			// //append row inside section
-			// $(document).on('click','.aione-add-column-button',function(e){
-			// 	e.preventDefault();
-			// 	var empty_column = '<div class="ac s100 m50 l100">'+$('.aione-options').html()+'</div>';
-			// 	$(this).parent().append(empty_column);
-			// });
-
-
 		/*****************************************************
 		/*  SECTIONS
 		/*****************************************************/
@@ -478,9 +455,9 @@
 			disabled: false, // Disables the sortable if set to true.
 			store: null,  // @see Store
 			animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
-			handle: ".aione-section-handle",
+			// handle: ".aione-section-handle",
 			ghostClass: "ghost-section", 
-			chosenClass: "chosen-section",
+			// chosenClass: "chosen-section",
 			dragClass:"drag-section",
 			//filter: '.ar , .ac'
 		});
@@ -581,17 +558,15 @@
 		    });
 		}	    
 		InitializeSection();
-	    //elements
+	   
+	});
+
+ //elements
     	var aione_elements = document.getElementById('aione_elements');
     	Sortable.create(aione_elements,{
 			group: { name: "aione_elements", pull: 'clone', put: true },
-			sort: false,
+			sort: false
 		});
-
-    	
-	});
-
-
 //clone apecific section
 $('body').on('click','.clone',function(){
 	var insertAfter = $(this).parents('.ac').attr('id');
@@ -622,13 +597,6 @@ $('body').on('click','.incress-width',function(){
 	}
 });
 
-//local storage
-	function storage(){
-		localStorage.setItem('aione-builder',$('.aione-builder-wrapper').html());
-		var storageData = localStorage.getItem('aione-builder');
-		$('.aione-builder-wrapper').html(storageData);
-	}
-	// storage();
 	$(document).on('click','.delete-column',function(){
 		$(this).parents('.aione-option-bar').parent().remove();
 	});
