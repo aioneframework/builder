@@ -31,12 +31,13 @@
 			<div class="ar">
 				<div class="ac s100 m100 l100 pv-30 ph-40 ">
 					<div class="aione-builder-wrapper mode-preview">
-						<div id="aione_builder" class="aione-builder preview aione-border bg-grey bg-lighten-4">
-							<section class="p-50 bg-white aione-section" id="aione_section">	
+						<section class="p-5 bg-white aione-section" id="aione_section" style="background-color: #ededed;margin: 5px">	
 								<div class="aione-align-center">
 									<h6 >Aione Page Builder	</h6>			
 								</div>
 							</section>
+						<div id="aione_builder" class="aione-builder preview aione-border bg-grey bg-lighten-4">
+							
 							 <section class="p-50 bg-white">					
 								<div class="ar">
 								</div>
@@ -340,7 +341,7 @@
 							
 						</div>
 						<div class="aione-builder-elements aione-border" id="aione-builder-elements">
-							<h3 class="aione_collapse_element">Layout <a href="#"><i class="fa fa-minus fa-plus"></i></a></h3>
+							<h3 class="aione_collapse_element">Layout <a href="#"><i class="fa fa-minus fa-plus white"></i></a></h3>
 							<div>
 								<label>Section</label>
 								<div id="aione_elements_section">
@@ -355,20 +356,26 @@
 										</div>			
 									</section>
 								</div>
-								<label>Row</label>
+								<span><i class="fa fa-credit-card" style="color: #2c6da5;"></i></span> <span>Row</span>
 								<div id="aione_elements_row">
-									<div class="ar"></div>
+									<div class="ar mt-10"></div>
 								</div>
-								<label>Column</label>
+								<span>
+								<i class="fa fa-columns" style="color: #2c6da5;"></i></span> <span>Column</span><!--  -->
 								<div id="aione_elements_columns">
-									<div class="ac s100 m100 l100"> </div>
+									<div class="ar mt-10">
+										<div class="ac s100 m50 l50 m-10">
+											
+										</div>
+										
+									 </div>
 								</div>
 								
 							</div>
 						</div>
 
 						<div class="aione-builder-elements aione-border" id="aione-builder-elements">
-							<h3 class="aione_collapse_element">Element <a href="#"><i class="fa fa-minus fa-plus"></i></a></h3>
+							<h3 class="aione_collapse_element">Element <a href="#"><i class="fa fa-minus fa-plus white"></i></a></h3>
 							
 							<div id="aione_elements">
 								<div class="aione-title" id="aione_element"><h1> Heading 1 </h1></div>
@@ -394,8 +401,15 @@
 	<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#aione_section').sortable();
+			$('#aione_builder').sortable();
+			$('#aione_builder section').sortable();
+			$('#aione_builder .ar').sortable();
 						//local storage
+				function localstorage() {
+					var pageData = $('#aione_builder').html();
+					console.log(pageData);
+					localStorage.setItem('pageData',pageData);
+				}
 
 			$('#builder_switch').click();
 			function initialAioneBuilder(){
