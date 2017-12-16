@@ -26,19 +26,55 @@
 	display: block;
 }
 .aione-builder-elements section{
-	border: 3px dotted #666666;	
-	min-height:30px;
-	margin-bottom: 10px;
+	border: 1px solid #bddcff;
+    min-height: 30px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
 }
 .aione-builder-elements .ar{
-	border: 2px dotted #168dc5;
+	    border: 1px solid #dedada;
 	min-height:30px;
 	margin-bottom: 10px;
+	padding: 8px
+}
+.aione-builder-elements .aione-elements-columns > div{
+	margin-bottom: 40px
+}
+.aione-builder-elements .aione-elements-columns > div:last-child{
+	margin-bottom: 15px
+}
+.aione-builder-elements .aione-elements-columns > div.l100,
+.aione-builder-elements .aione-elements-columns > div.l50,
+.aione-builder-elements .aione-elements-columns > div.l25{
+	border: 1px solid #e8e8e8;
+	position: relative;
+}
+.aione-builder-elements .aione-elements-columns > div.l100:after{
+	content: 'fullwidth';
+}
+.aione-builder-elements .aione-elements-columns > div.l50:after{
+	content: '50 percent';	
+}
+.aione-builder-elements .aione-elements-columns > div.l25:after{
+	content: '25 %';	
+}
+.aione-builder-elements .aione-elements-columns > div.l100:after,
+.aione-builder-elements .aione-elements-columns > div.l50:after,
+.aione-builder-elements .aione-elements-columns > div.l25:after{
+    text-align: center;
+    display: block;
+    background-color: #e8e8e8;
+    position: absolute;
+    bottom: -23px;
+    width: 100%;
+    padding: 4px;
+    left: -1px;
 }
 .aione-builder-elements .ac{
 	border: 1px dotted #cc0000;
 	min-height:30px;
 	float:none;
+	width: 100%;
 }
 .aione-builder-elements h1,
 .aione-builder-elements h2,
@@ -48,7 +84,7 @@
 .aione-builder-elements h6{
 	line-height:30px;
 	border-bottom:1px solid #e8e8e8;
-	margin: 0 0 8px 0;
+	margin: 0 0 0 0;
 	padding: 3px 0 3px 10px; 
 	cursor: pointer;
 	background: #ffffff;
@@ -63,14 +99,15 @@
 
 .aione-builder-wrapper.mode-editable  .aione-builder-elements{
 	display: block;
+	background-color: #e7e7e7;
 }
 
 
 .aione-builder-wrapper.mode-editable {
-
+	display: flex
 }
 .aione-builder{
-	width: 74%;
+	width: 75%;
 	float: left;
 }
 .aione-builder-wrapper.mode-preview  .aione-builder{
@@ -78,31 +115,35 @@
 	float: none;
 }
 .aione-builder-wrapper.mode-editable .aione-builder section {
-	border:3px dotted #666666;
+	border:1px solid #bddcff;
 	padding: 10px;
 	margin: 10px;
 	min-height: 50px;
+	background-color: #f5f5f5
 }
 
 .aione-builder-wrapper.mode-editable .aione-builder .ar {
-	border:2px dotted #168dc5;
+	border:1px solid #dedada;
 	padding: 10px;
 	margin-bottom: 15px;
 	min-height: 40px;
+	background-color: white;
 }
 
 .aione-builder-wrapper.mode-editable .aione-builder .ac {
-	border:1px dotted #cc0000;
+	border:5px solid white;
 	margin-bottom: 15px;
-	padding: 10px;
+	padding: 6px 10px;
 	min-height: 30px;
+	background-color: #000000a6;
+	margin-bottom: 0
 }
 
 
 .aione-section-handle{
 	width: 50px;
 	height: 20px;
-	background-color: #cc0000;
+	color: white
 }
 .aione-col-handle{
 	width: 50px;
@@ -147,19 +188,56 @@
 	width: 20%;
 	float: right
 }
+.aione-builder-elements{
+	padding:8px;
+}
 .aione-builder-elements > div{
-	padding: 10px;
-    border: 1px solid #e8e8e8;
-    margin: 5px;
+	
+    /*border: 1px solid #e8e8e8;
+    margin: 5px;*/
+
 }
 .aione-builder-elements{
 	display: none;
+
 }
 .aione-builder-elements h3 a{
 	float: right;
     padding-right: 10px;
     color: grey;
+    margin: 0
 }
+.aione-builder-elements .aione-title{
+	display: inline-block;
+    width: 46px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+
+}
+.aione-builder-elements .aione-elements{
+	padding: 8px;
+	background-color: white
+}
+.aione-builder-elements .aione-title > h1,
+.aione-builder-elements .aione-title > h2,
+.aione-builder-elements .aione-title > h3,
+.aione-builder-elements .aione-title > h4,
+.aione-builder-elements .aione-title > h5,
+.aione-builder-elements .aione-title > h6{
+	       padding: 5px 10px;
+    border-radius: 2px;
+    font-size: 20px;
+    background-color: #5897fb;
+    color:white;
+}
+
+/*
+
+
+
+
+
+
 
 
 
@@ -204,4 +282,4 @@
 	}
 	.incress-width .fa-plus{
 		color: #2c6da5;
-	}
+	}*/
