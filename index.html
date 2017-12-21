@@ -51,6 +51,42 @@
 	<!-- Custom -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
+	<style type="text/css">
+		.aione-builder-wrapper.mode-editable .aione-builder section{
+						
+			padding: 10px;
+			min-height: 50px;
+			margin: 0;
+		    border: 2px dashed #aaa;
+		    margin-bottom: 4px;
+		    background-color: white;
+		}
+		.aione-builder-wrapper.mode-editable .aione-builder .ar{
+			margin: 0;
+    		background-color: #e4eff4;
+
+		}
+		.aione-builder-wrapper.mode-editable .aione-builder .ac{
+			background-color: #f9f9fb;
+			border: 1px solid #e8e8e8;
+		}
+		.aione-section-handle{
+			color: #757575;
+		}
+		.aione-option-right-bar > span > a > i{
+			color: #757575;
+
+		}
+		.aione-builder-elements{
+			padding:0;
+		}
+		.aione-option-bar .aione-option-right-bar{
+			display: none;
+		}
+		.ac.ui-sortable-handle:hover .aione-option-bar .aione-option-right-bar{
+			display: block;
+		}
+	</style>
 </head>
 <body>
 	<div id="aione_wrapper" class="aione-wrapper layout-header-top aione-layout-wide aione-theme-arcane">
@@ -348,12 +384,12 @@
 															<div class="aione-option-right-bar">
 																<span>
 																	<a href="#" class="incress-width">
-																		<i class="fa fa-plus white"></i>
+																		<i class="fa fa-plus-square-o white"></i>
 																	</a>
 																</span>
 																<span>
 																	<a href="#" class="decress-width">
-																		<i class="fa fa-minus white"></i>
+																		<i class="fa fa-minus-square-o white"></i>
 																	</a>
 																</span>
 																<span>
@@ -368,7 +404,7 @@
 																</span> -->
 																<span>
 																	<a href="#" class="delete-column">
-																		<i class="fa fa-times red"></i>
+																		<i class="fa fa-trash-o red"></i>
 																	</a>
 																</span>
 															</div>

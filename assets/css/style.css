@@ -115,11 +115,13 @@
 	float: none;
 }
 .aione-builder-wrapper.mode-editable .aione-builder section {
-	border:1px solid #bddcff;
+	
 	padding: 10px;
-	margin: 10px;
 	min-height: 50px;
-	background-color: #f5f5f5
+	margin: 0;
+    border: 2px dashed #aaa;
+    margin-bottom: 4px;
+    background-color: white;
 }
 
 .aione-builder-wrapper.mode-editable .aione-builder .ar {
