@@ -99,7 +99,6 @@
 
 .aione-builder-wrapper.mode-editable  .aione-builder-elements{
 	display: block;
-	background-color: #e7e7e7;
 }
 
 
@@ -157,7 +156,7 @@
 	background-color: #ededed;
 }
 .ghost-section{
-	background-color: #e8e8e8;
+	background-color: red;
 	border : 1px solid red;
 }
 .chosen-section{
