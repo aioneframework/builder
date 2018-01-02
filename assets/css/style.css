@@ -109,6 +109,8 @@
 .aione-builder{
 	width: 75%;
 	float: left;
+	padding:10px;
+	background-color: #f8f8f8;
 }
 .aione-builder-wrapper.mode-preview  .aione-builder{
 	width: 100%;
@@ -119,17 +121,19 @@
 	padding: 10px;
 	min-height: 50px;
 	margin: 0;
-    border: 2px dashed #aaa;
-    margin-bottom: 4px;
-    background-color: white;
+    border: 1px solid #f2f2f2;
+    margin-bottom: 5px;
+    background-color: #ffffff;
 }
-
 .aione-builder-wrapper.mode-editable .aione-builder .ar {
-	border:1px solid #dedada;
-	padding: 10px;
-	margin-bottom: 15px;
-	min-height: 40px;
-	background-color: white;
+    border: 1px dotted #d8d8d8;
+    padding: 10px;
+    margin-bottom: 10px;
+    min-height: 40px;
+    background-color: #fafafa;
+}
+.aione-builder-wrapper.mode-editable .aione-builder .ar:last-child {
+	margin-bottom: 0px;
 }
 
 .aione-builder-wrapper.mode-editable .aione-builder .ac {
@@ -190,8 +194,13 @@
 	width: 20%;
 	float: right
 }
-.aione-builder-elements{
-	padding:8px;
+
+
+.aione-builder-elements {
+    padding: 0;
+    background-color: #FFFFFF;
+    border-left: 1px solid #e8e8e8;
+    margin-top: 1px;
 }
 .aione-builder-elements > div{
 	
@@ -231,6 +240,25 @@
     font-size: 20px;
     background-color: #5897fb;
     color:white;
+}
+
+
+
+
+
+.aione-section-handle{
+	color: #757575;
+}
+.aione-option-right-bar > span > a > i{
+	color: #757575;
+
+}
+
+.aione-option-bar .aione-option-right-bar{
+	display: none;
+}
+.ac.ui-sortable-handle:hover .aione-option-bar .aione-option-right-bar{
+	display: block;
 }
 
 /*
