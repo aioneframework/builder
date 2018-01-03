@@ -23,10 +23,11 @@ function init_sections(){
 		delay: 0,
 		disabled: false,
 		store: null,
-		//handle: '.',
-		ghostClass: "ghost-section",
-		chosenClass: "chosen-section",
-		dragClass: "drag-section", 
+		//filter: '.actions',
+		handle: '.section-handle',
+		ghostClass: 'ghost-section',
+		chosenClass: 'chosen-section',
+		dragClass: 'drag-section', 
 		animation: 150
 	});
 }
@@ -36,7 +37,7 @@ function init_sections(){
 /*****************************************************/
 function init_rows(){
 	var aione_sections = new Array();
-	$(".aione-builder > section").each(function() {
+	$(".aione-builder > section > .wrapper").each(function() {
 		var aione_section_id = $(this).attr("id");
 		if(aione_section_id != undefined){
 			aione_sections.push(aione_section_id);
@@ -95,9 +96,10 @@ function init_columns(){
 
 
 $(document).ready(function() {
-	init_sections();
-	init_rows();
 	init_columns();
+	init_rows();
+	init_sections();
+	
 
 
 
