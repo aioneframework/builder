@@ -70,20 +70,45 @@
                          			
                          			<div class="ar">
                          				<div class="ac l75" >
-                         					<div class="builder">
-                         						
+                         					<div class="builder bg-grey bg-lighten-4 p-20" style="min-height: 500px">
+                         						<section>
+                                                    <div class="ar">
+                                                        <div class="ac l50 "></div>
+                                                        <div class="ac l50 "></div>
+                                                        <div class="ac l50 "></div>
+                                                        <div class="ac l50 "></div>
+                                                        <div class="ac l50 "></div>
+                                                        <div class="ac l33 "></div>
+                                                        <div class="ac l33 "></div>
+                                                        <div class="ac l33 "></div>
+                                                        <div class="ac l20 "></div>
+                                                        <div class="ac l20 "></div>
+                                                        <div class="ac l10 "></div>
+                                                        <div class="ac l9 "></div>
+                                                    </div>            
+                                                </section>
+                                                <section>
+                                                    <div class="ar"></div>
+                                                </section>
+                                                <section>
+                                                    <div class="ar"></div>
+                                                    <div class="ar"></div>
+                                                </section>   
                          					</div>
                          				</div>
                          				<div class="ac l25" >
                          					<div class="elements">
-                         						<div>
-                         							<section>Section</section>	
+                         						<div class="bg-light-blue bg-darken-1">
+                                                    Section
+                         							<section></section>	
                          						</div>
-                         						<div>
-                         							<div class="ar">Row</div>
+                         						<div class="bg-light-blue bg-darken-1">
+                                                    Row
+                         							<div class="ar"></div>
                          						</div>
-                         						<div>
-                         							<div class="ac l100">Col</div>
+                         						<div class="bg-light-blue bg-darken-1">
+                                                    Col
+                         							<div class="ac l100 "></div>
                          						</div>
                          					</div>
                          				</div>
@@ -110,11 +135,44 @@
     <style type="text/css">
     	.elements div,
     	.elements section{
-    		display: inline-block;
+    		display: none !important;
     		padding: 0;
     		margin: 0;
     		
     	}
+        .elements > div{
+            display: inline-block !important ;
+            padding: 10px;
+            color: white
+        }
+
+        .builder > section{
+            background: white;
+            border: 1px solid #e8e8e8;
+            min-height: 60px;
+            margin-bottom: 20px;
+            padding: 10px
+        }
+        .builder > section > div{
+            background: lightblue;
+            min-height: 40px;
+            margin-bottom: 10px;   
+            padding-right: 10px;
+            padding-bottom: 10px 
+           
+        }
+        .builder > section > div:last-child{
+            margin-bottom: 0px
+        }
+        .builder > section > div > div{
+            background: #e0e0e0;
+            background: #e0e0e0;/*rrr*/
+            min-height: 50px !important;
+            border-top: 10px solid lightblue;
+            border-left: 10px solid lightblue;
+           
+        }
+        
     </style>
 </body>
 </html>
