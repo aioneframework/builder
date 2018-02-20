@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Aione Builder - Kademi Content Editor</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.aioneframework.com/assets/css/aione.min.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,800,900">
+
+        <link rel="stylesheet" type="text/css" href="../dist/css/keditor-1.1.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="../dist/css/keditor-components-1.1.5.min.css" />
+        <!-- End of KEditor styles -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/examples.css" /> -->
+        <script type="text/javascript" src="plugins/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+        <!-- <script type="text/javascript" src="../examples/plugins/bootstrap-3.3.6/js/bootstrap.min.js"></script> -->
+        <script type="text/javascript">
+            var bsTooltip = $.fn.tooltip;
+            var bsButton = $.fn.button;
+        </script>
+        <script src="plugins/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            $.widget.bridge('uibutton', $.ui.button);
+            $.widget.bridge('uitooltip', $.ui.tooltip);
+            $.fn.tooltip = bsTooltip;
+            $.fn.button = bsButton;
+        </script>
+        <!-- <script type="text/javascript" src="https://aioneframework.com/aioneframework/assets/js/vendor.js"></script> -->
+<script type="text/javascript" src="https://aioneframework.com/aioneframework/assets/js/aione.js"></script>
+        <script type="text/javascript" src="plugins/jquery.nicescroll-3.6.6/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="plugins/ckeditor-4.5.6/ckeditor.js"></script>
+        <script type="text/javascript" src="plugins/ckeditor-4.5.6/adapters/jquery.js"></script>
+        <!-- Start of KEditor scripts -->
+        <script type="text/javascript" src="../dist/js/keditor-1.1.5.min.js"></script>
+        <script type="text/javascript" src="../dist/js/keditor-components-1.1.5.min.js"></script>
+        <!-- End of KEditor scripts -->
+    </head>
+
+    <body>
+        <div id="aione_wrapper" class="aione-wrapper layout-header-top aione-layout-wide aione-theme-arcane">
+            <div class="wrapper">
+                <div id="aione_header" class="aione-header light sticky">
+                    <div class="wrapper">
+                        <div class="ar aione-border-bottom">
+                            <div class="ac l50 m50 s50 pv-5">
+                                <a href="https://aioneframework.com" target="_blank"><img src="https://aioneframework.com/assets/images/aione-framework-logo-small.png" class="aione-float-left" style="height:30px;padding-right:8px;"></a><h4 class="red m-0 font-weight-100 line-height-30">Page Builder</h4>
+                            </div>
+                            <div class="ac l50 m50 s50 pv-5 aione-align-right">
+                                <button id="builder_switch" class="ph-15 pv-3 mb-0">Preview</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="aione_main" class="aione-main fullwidth">
+                    <div class="wrapper">
+                        <div id="aione_content" class="aione-content">
+                            <div class="wrapper">
+                                <div id="aione_page_content" class="aione-page-content">
+                                    <div class="wrapper">
+                                        <div id="content-area"></div>
+            
+                                        <script type="text/javascript">
+                                            $(function() {
+                                                $('#content-area').keditor();
+                                            });
+                                        </script>    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="aione_copyright" class="aione-copyright light sticky">
+                    <div class="wrapper aione-align-center font-weight-400 line-height-30">
+                        ©2017 <a href="http://oxoitsolutions.com" target="_blank"><span class="oxo-color">OXO IT SOLUTIONS PVT. LTD.</span></a> All rights reserved. Built with <a href="https://aioneframework.com" target="_blank"><span class="primary-color">Aione</span> <span class="secondary-color">Framework</span></a>.
+                </div>
+                </div>
+            </div>
+            
+            
+        </div>
+                
+        
+    </body>
+    <style type="text/css">
+        #keditor-sidebar{
+            top:42px;
+            bottom: 40px
+        }
+    </style>
+</html>

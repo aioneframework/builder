@@ -1,335 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Aione Framework Drag and Drop Page Builder</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Aione Builder - Kademi Content Editor</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.aioneframework.com/assets/css/aione.min.css">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,800,900">
 
-    <!-- Online Web Page Builder, Drag and Drop, live web page editor, aione framework -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="identifier-url" content="https://aioneframework.com/" />
-    <meta name="title" content="Aione Framework Page builder" />
-    <meta name="description" content="Create responsive websites with fastest drag and drop web page builder" />
-    <meta name="abstract" content="Aione framework responsive page builder tool to create web pages quickly with drag and drop" />
-    <meta name="keywords" content="aione framework, page builder, code, live, framework, css4, layout, html5, help" />
-    <meta name="author" content="OXO IT SOLUTIONS PRIVATE LIMITED" />
-    <meta name="revisit-after" content="10" />
-    <meta name="language" content="EN" />
-    <meta name="copyright" content="©2017 OXO IT SOLUTIONS PRIVATE LIMITED" />
-    <meta name="robots" content="All" />
-    <meta name="application-name" content="Aione Framework Page builder">
+        <link rel="stylesheet" type="text/css" href="dist/css/keditor-1.1.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="dist/css/keditor-components-1.1.5.min.css" />
+        <!-- End of KEditor styles -->
+        <!-- <link rel="stylesheet" type="text/css" href="css/examples.css" /> -->
+        <script type="text/javascript" src="plugins/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+        <!-- <script type="text/javascript" src="../examples/plugins/bootstrap-3.3.6/js/bootstrap.min.js"></script> -->
+        <script type="text/javascript">
+            var bsTooltip = $.fn.tooltip;
+            var bsButton = $.fn.button;
+        </script>
+        <script src="plugins/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            $.widget.bridge('uibutton', $.ui.button);
+            $.widget.bridge('uitooltip', $.ui.tooltip);
+            $.fn.tooltip = bsTooltip;
+            $.fn.button = bsButton;
+        </script>
+        <!-- <script type="text/javascript" src="https://aioneframework.com/aioneframework/assets/js/vendor.js"></script> -->
+<script type="text/javascript" src="https://aioneframework.com/aioneframework/assets/js/aione.js"></script>
+        <script type="text/javascript" src="plugins/jquery.nicescroll-3.6.6/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="plugins/ckeditor-4.5.6/ckeditor.js"></script>
+        <script type="text/javascript" src="plugins/ckeditor-4.5.6/adapters/jquery.js"></script>
+        <!-- Start of KEditor scripts -->
+        <script type="text/javascript" src="dist/js/keditor-1.1.5.min.js"></script>
+        <script type="text/javascript" src="dist/js/keditor-components-1.1.5.min.js"></script>
+        <!-- End of KEditor scripts -->
+    </head>
 
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="https://aioneframework.com/assets/images/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="https://aioneframework.com/assets/images/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="https://aioneframework.com/assets/images/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="https://aioneframework.com/assets/images/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="https://aioneframework.com/assets/images/mstile-310x310.png" />
-
-
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://aioneframework.com/assets/images/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://aioneframework.com/assets/images/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://aioneframework.com/assets/images/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://aioneframework.com/assets/images/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://aioneframework.com/assets/images/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://aioneframework.com/assets/images/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://aioneframework.com/assets/images/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://aioneframework.com/assets/images/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="https://aioneframework.com/assets/images/favicon-128.png" sizes="128x128" />
-
-    <link rel="stylesheet" type="text/css" href="https://aioneframework.com/aioneframework/assets/css/aione.min.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400">
-</head>
-<body>
-    <div id="aione_wrapper" class="aione-wrapper layout-header-top aione-layout-wide aione-theme-arcane">
-        <div class="wrapper">
-            <div id="aione_header" class="aione-header light sticky">
-                <div class="wrapper">
-                    <div class="ar aione-border-bottom">
-                        <div class="ac l50 m50 s50 pv-5">
-                            <a href="https://aioneframework.com" target="_blank"><img src="https://aioneframework.com/assets/images/aione-framework-logo-small.png" class="aione-float-left" style="height:30px;padding-right:8px;"></a><h4 class="red m-0 font-weight-100 line-height-30">Page Builder</h4>
-                        
+    <body>
+        <div id="aione_wrapper" class="aione-wrapper layout-header-top aione-layout-wide aione-theme-arcane">
+            <div class="wrapper">
+                <div id="aione_header" class="aione-header light sticky">
+                    <div class="wrapper">
+                        <div class="ar aione-border-bottom">
+                            <div class="ac l50 m50 s50 pv-5">
+                                <a href="https://aioneframework.com" target="_blank"><img src="https://aioneframework.com/assets/images/aione-framework-logo-small.png" class="aione-float-left" style="height:30px;padding-right:8px;"></a><h4 class="red m-0 font-weight-100 line-height-30">Page Builder</h4>
+                            </div>
+                            <div class="ac l50 m50 s50 pv-5 aione-align-right">
+                                <button id="builder_switch" class="ph-15 pv-3 mb-0">Preview</button>
+                            </div>
                         </div>
-                        <div class="ac l50 m50 s50 pv-5 aione-align-right">
-                            <button id="builder_switch" class="ph-15 pv-3 mb-0">Preview</button>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="aione_main" class="aione-main fullwidth">
+                    <div class="wrapper">
+                        <div id="aione_content" class="aione-content">
+                            <div class="wrapper">
+                                <div id="aione_page_content" class="aione-page-content">
+                                    <div class="wrapper">
+                                        <div id="content-area"></div>
+            
+                                        <script type="text/javascript">
+                                            $(function() {
+                                                $('#content-area').keditor();
+                                            });
+                                        </script>    
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="clear"></div>
-            </div><!-- #aione-header -->
 
-            <div id="aione_main" class="aione-main fullwidth">
-                <div class="wrapper">
-                    <div id="aione_content" class="aione-content">
-                        <div class="wrapper">
-                            <div id="aione_page_content" class="aione-page-content">
-                                <div class="wrapper">
-
-                         			
-                         			<div class="ar" id="advanced">
-                         				<div class="ac l75" >
-                         					<div id="advanced-2" class="builder bg-grey bg-lighten-4 p-20" style="min-height: 500px">
-                         						
-                                                <section class="section ">
-                                                    <div class="inner-drag-level0">
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                            </div>
-                                                        </div>
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                            </div>
-                                                        </div>    
-                                                    </div>
-                                                    
-                                                </section>
-                                                <section class="section">
-                                                    <div class="inner-drag-level0">
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                                <div class="ac l50">
-                                                                    
-                                                                </div>    
-                                                            </div>
-                                                        </div>    
-                                                    </div>
-                                                </section>
-                                                <section class="section">
-                                                    <div class="inner-drag-level0">
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-
-                                                            </div>
-                                                        </div>    
-                                                    </div>
-                                                </section>
-                                                <section class="section">
-                                                    <div class="inner-drag-level0">
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-
-                                                            </div>
-                                                        </div>    
-                                                    </div>
-                                                </section>
-                                                <section class="section">
-                                                    <div class="inner-drag-level0">
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="ar">
-                                                            <div class="inner-drag-level1">
-
-                                                            </div>
-                                                        </div>    
-                                                    </div>
-                                                </section>
-                                              
-                                             
-                         					</div>
-                         				</div>
-                         				<div class="ac l25" >
-                         					<div class="elements" id="advanced-1">
-                         						<!-- <section class="section">
-                                                     <div  class="inner-drag-level0">
-
-                                                     </div>              
-                                                </section>
-                                                <div class="ar">
-                                                    <div  class="inner-drag-level1">
-
-                                                    </div>
-                                                </div>
-                                                <div class="ac l100"></div> -->
-                                            	
-                                            	<div class="aione-accordion">
-                                            		<div class="aione-item">
-                                            			<div class="aione-item-header">
-                                            				Testomonials
-                                            			</div>
-                                            			<div class="aione-item-content p-10">
-                                            				<div class="aione-shadow p-10 mb-10">
-                                            					abcd
-                                            				</div>
-                                            				<div class="aione-shadow p-10 mb-10">
-                                            					abcd
-                                            				</div>
-                                            				<div class="aione-shadow p-10">
-                                            					abcd
-                                            				</div>
-                                            			</div>
-                                            		</div>
-                                            	</div>
-                         					</div>
-                         				</div>
-                         			</div>
-
-
-
-                                </div>
-                            </div>
-                        </div><!-- .wrapper -->
-                    </div><!-- .aione-content -->
-                    <div id="aione_copyright" class="aione-copyright light sticky">
-                        <div class="wrapper aione-align-center font-weight-400 line-height-30">
-                            &copy;2017 <a href="http://oxoitsolutions.com" target="_blank"><span class="oxo-color">OXO IT SOLUTIONS PVT. LTD.</span></a> All rights reserved. Built with <a href="https://aioneframework.com" target="_blank"><span class="primary-color">Aione</span> <span class="secondary-color">Framework</span></a>. 
-                        </div><!-- .aione-row -->
-                    </div><!-- .aione-copyright -->
-                </div><!-- .wrapper -->
-            </div>          
-        </div>
-    </div>
-    <!-- Core-->
-    <script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/vendor.js"></script>
-    <script type="text/javascript" src="http://aioneframework.com/aioneframework/assets/js/aione.js"></script>
-    <script type="text/javascript" src="assets/Sortable.js"></script>
-    <script type="text/javascript">
-        // [{
-        //     name: 'advanced',
-        //     pull: 'clone',
-        //     put: false
-        // }, {
-        //     name: 'advanced',
-        //     pull: false,
-        //     put: true
-        // }, {
-        //     name: 'advanced',
-        //     pull: false,
-        //     put: true
-        // }].forEach(function (groupOpts, i) {
-        //     Sortable.create(document.getElementById('advanced-' + (i + 1)), {
-        //         sort: (i != 2),
-        //         group: groupOpts,
-        //         animation: 150
-        //     });
+                <div id="aione_copyright" class="aione-copyright light sticky">
+                    <div class="wrapper aione-align-center font-weight-400 line-height-30">
+                        ©2017 <a href="http://oxoitsolutions.com" target="_blank"><span class="oxo-color">OXO IT SOLUTIONS PVT. LTD.</span></a> All rights reserved. Built with <a href="https://aioneframework.com" target="_blank"><span class="primary-color">Aione</span> <span class="secondary-color">Framework</span></a>.
+                </div>
+                </div>
+            </div>
             
-        // });
-
-
-       
-        Sortable.create(document.getElementById('advanced-2'), {
-            animation: 150,
-            draggable: '.section',
-        });
-        [].forEach.call(document.getElementById('advanced-2').getElementsByClassName('inner-drag-level0'), function (el){
-            Sortable.create(el, {
-                group: 'level0',
-                animation: 150
-            });
-        });
-        [].forEach.call(document.getElementById('advanced-2').getElementsByClassName('inner-drag-level1'), function (el){
-            Sortable.create(el, {
-                group: 'level1',
-                animation: 150
-            });
-        });
-
-    </script>
+            
+        </div>
+                
+        
+    </body>
     <style type="text/css">
-    	
-        .elements > section:after{
-            content: "section";
+        #keditor-sidebar{
+            top:42px;
+            bottom: 40px
         }
-        .elements > .ar:after{
-            content: 'row';
-        }
-        .elements > .ac:after{
-            content: 'column';
-        }
-        .elements > section:after,
-        .elements > .ar:after,
-        .elements > .ac:after{
-            display: inline-block ;
-            padding: 10px;
-            color: white;
-            background:#5F9EDF
-        }
-        
-        .builder > section > .inner-drag-level0{
-            background: white;
-            border: 1px solid #e8e8e8;
-            min-height: 60px;
-            margin-bottom: 20px;
-            padding: 10px
-        }
-        .builder > section > .inner-drag-level0 > div{
-            background: lightblue;
-            min-height: 40px;
-            margin-bottom: 10px;   
-            padding-right: 10px;
-            padding-bottom: 10px 
-           
-        }
-        .builder > section > .inner-drag-level0 > div:last-child{
-            margin-bottom: 0px
-        }
-        .builder > section > .inner-drag-level0 > div > .inner-drag-level1{
-            min-height: 50px
-        }
-        .builder > section > .inner-drag-level0 > div > .inner-drag-level1 >  div{
-            background: #e0e0e0;
-            background: #e0e0e0;/*rrr*/
-            min-height: 50px !important;
-            border-top: 10px solid lightblue;
-            border-left: 10px solid lightblue;
-           
-        }
-        .inner-drag{
-            height: 100%
-        }
-        
     </style>
-</body>
 </html>
